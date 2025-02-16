@@ -7,6 +7,15 @@ app = FastAPI()
 
 PDF_PATH = "public/facturas.pdf"  # Ruta del PDF con facturas
 
+# Permitir solo el dominio de tu frontend en producción
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://www.recaudamas.com.co"],  # 🔥 Cambia esto por tu dominio
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos (GET, POST, etc.)
+    allow_headers=["*"],  # Permite todos los headers en las peticiones
+)
+
 # Definir el esquema de entrada con Pydantic
 class InvoiceRequest(BaseModel):
     invoiceNumber: str
