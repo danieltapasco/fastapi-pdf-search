@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import Response
 from pydantic import BaseModel
 import fitz  # PyMuPDF
+from fastapi.middleware.cors import CORSMiddleware  # 🔥 Importa CORSMiddleware
 
 app = FastAPI()
 
