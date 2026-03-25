@@ -9,6 +9,8 @@ app = FastAPI()
 
 PDF_PATH = "public/facturas.pdf"  # Ruta del PDF
 
+#Ajustes
+
 # Habilitar CORS solo para el frontend en producción
 app.add_middleware(
     CORSMiddleware,
